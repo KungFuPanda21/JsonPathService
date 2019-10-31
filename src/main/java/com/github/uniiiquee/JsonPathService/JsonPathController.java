@@ -1,4 +1,4 @@
-package com.github.haappyy.JsonPathService;
+package com.github.uniiiquee.JsonPathService;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
