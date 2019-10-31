@@ -1,4 +1,4 @@
-package com.github.haappyy.JsonPathService;
+package com.github.uniiiquee.JsonPathService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
