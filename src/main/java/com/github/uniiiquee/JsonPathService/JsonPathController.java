@@ -2,7 +2,7 @@ package com.github.uniiiquee.JsonPathService;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class JsonPathController {
 
 	private final static Logger LOGGER = Logger.getLogger(JsonPathController.class.getName());
+	
+	@Autowired JsonPathService jsonPathService;
 
 	/**
 	 * Evaluates the JSON path expression provided via the jsonPathExpression
@@ -33,6 +35,6 @@ public class JsonPathController {
 			@RequestBody String json) {
 		LOGGER.log(Level.INFO,
 				"Request to jsonPath with the json path expression:" + jsonPathExpression + " and the body:" + json);
-		return ResponseEntity.status(501).build();
+		return ResponseEntity.ok(jsonPathService.evaluteDefiniteJsonPath(jsonPathExpression, json));
 	}
 }
