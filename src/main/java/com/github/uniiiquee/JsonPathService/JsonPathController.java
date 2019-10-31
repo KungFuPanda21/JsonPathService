@@ -35,6 +35,9 @@ public class JsonPathController {
 			@RequestBody String json) {
 		LOGGER.log(Level.INFO,
 				"Request to jsonPath with the json path expression:" + jsonPathExpression + " and the body:" + json);
+		if(jsonPathExpression  == null || jsonPathExpression.isEmpty()) {
+			return ResponseEntity.ok("");
+		}
 		return ResponseEntity.ok(jsonPathService.evaluteDefiniteJsonPath(jsonPathExpression, json));
 	}
 }
