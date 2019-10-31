@@ -63,5 +63,12 @@ class JsonPathIntegrationTests {
 	            .andExpect(content().string("Albert"));
 	}
 	
+	@Test
+	void getEmpty() throws Exception {
+		mvc.perform(post("/jsonPath").param("jsonPathExpression", "")
+	            .content(inputJsonObjectInObject.getBytes()))
+	            .andDo(print())
+	            .andExpect(content().string(""));
+	}
 
 }
