@@ -1,6 +1,7 @@
 # JsonPathService
 
 This spring boot based application will provide a jsonPath evaluation function via http. It will not be RESTful but easy to use. 
+Use the docker file with `docker build -t CHOOSE-A-NAME .` and `docker run CHOOSE-A-NAME`.
 
 # Spring Boot Project
 
